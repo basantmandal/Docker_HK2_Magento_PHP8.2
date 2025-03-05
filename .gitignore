@@ -1,0 +1,14 @@
+# Exclude Common Directory & Files
+.idea
+.cache
+.rdb
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+*.zip
+*.jar
+node_modules
+.cookie
+.lock
+.cookie
