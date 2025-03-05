@@ -1,0 +1,12 @@
+.env
+.mysql
+.log
+**/node_modules/
+**/dist
+.git
+.gitignore
+CHANGELOG.md
+docker-compose.test.yml
+docs/
+LICENSE
+README.md
