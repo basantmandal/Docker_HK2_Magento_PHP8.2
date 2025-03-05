@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  php-fpm:
+    container_name: ${CONTAINER_HOSTNAME}_HK2_PHP82_FPM
+    build:
+      context: './bin/php/${PHP_VERSION}/'
+      dockerfile: 'Dockerfile'
+      args:
+        USER: ${USER}
+        GIT_USER_NAME: ${GIT_USER_NAME}
+        GIT_USER_EMAIL_ID: ${GIT_USER_EMAIL_ID}
+        EMAIL_NO_REPLY: ${EMAIL_NO_REPLY}
+    restart: unless-stopped
+    user: "${UID}:${GID}"
+    volumes:
+      - ./var/www:/var/www/html
+      - ./etc/php/${PHP_VERSION}/fpm/php.ini:/usr/local/etc/php/php.ini
+    networks:
+      - HK2TestNetwork
+    dns:
+      - "8.8.8.8"
+      - "1.1.1.1"
+networks:
+  HK2TestNetwork:
+    driver: bridge
