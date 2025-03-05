@@ -1,0 +1,1 @@
+# Docker_HK2_Magento_PHP8.2
